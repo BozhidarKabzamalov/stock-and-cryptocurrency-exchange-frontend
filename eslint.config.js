@@ -3,9 +3,18 @@ const expoConfig = require("eslint-config-expo/flat");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 module.exports = defineConfig([
-  expoConfig,
-  eslintPluginPrettierRecommended,
-  {
-    ignores: ["dist/*"],
-  },
+	expoConfig,
+	eslintPluginPrettierRecommended,
+	{
+		ignores: ["dist/*"],
+		rules: {
+			"prettier/prettier": [
+				"error",
+				{
+					useTabs: true,
+					tabWidth: 4,
+				},
+			],
+		},
+	},
 ]);
